@@ -1,25 +1,29 @@
 .App {
+  display: flex;
+  justify-content: center;
+}
+
+.Jobs {
   width: 70%;
-  margin: 20px 40px;
+  margin: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .Job {
-  width: 80%;
-  margin: 10px 0;
+  width: 100%;
+  margin: 10px 10px;
   padding: 10px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.JobsStepper {
+  width: 50%;
+}
+
 .Job:hover {
   cursor: pointer;
-}
-
-.job-company {
-  padding: 0 30px;
-}
-
-.job-dialog {
-  padding: 30px 50px;
 }
