@@ -6,7 +6,7 @@ import JobsStepper from './JobsStepper';
 export default function Jobs({ jobs }) {
     const [activeStep, setActiveStep] = useState(0);
     const jobsPerPage = 20;
-    const maxSteps = Math.ceil(jobs.length / jobsPerPage);
+    const numPages = Math.ceil(jobs.length / jobsPerPage);
 
     const handleNext = () => {
         setActiveStep(prevActiveStep => prevActiveStep + 1);
@@ -18,14 +18,13 @@ export default function Jobs({ jobs }) {
 
     return (
         <div className="Jobs">
-            <Typography variant="h4" component="h1">
-                Software Jobs
-            </Typography>
+            <Typography variant="h4">Software Jobs</Typography>
+            <Typography variant="h6">Found {jobs.length} jobs</Typography>
             {jobs.slice(activeStep * jobsPerPage, (activeStep + 1) * jobsPerPage).map(job => 
                 <Job job={job} key={job.id} />
             )}
             <JobsStepper
-                maxSteps={maxSteps}
+                maxSteps={numPages}
                 activeStep={activeStep}
                 handleNext={handleNext}
                 handleBack={handleBack}
