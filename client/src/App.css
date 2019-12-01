@@ -27,3 +27,8 @@
 .Job:hover {
   cursor: pointer;
 }
+
+.company-logo {
+  height: 30px;
+  float: right;
+}
